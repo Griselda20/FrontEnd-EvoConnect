@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Lowongan;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $listLowongan = Lowongan::all();
+        return view('user.home', compact('listLowongan'));
     }
 }
